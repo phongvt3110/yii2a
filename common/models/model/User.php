@@ -1,5 +1,12 @@
 <?php
-namespace common\models\db;
+/**
+ * Created by PhpStorm.
+ * User: phongvt
+ * Date: 17/01/2017
+ * Time: 17:30
+ */
+
+namespace common\models\model;
 
 use Yii;
 use yii\base\NotSupportedException;

@@ -12,19 +12,19 @@ class m161031_211229_tbl_province extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%tbl_province}}', [
-            'pro_id' => $this->primaryKey(),
-            'province_name' => $this->string(50)->notNull()->unique(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
+        $this->createTable('{{%province}}', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string(50)->notNull()->unique(),
+            'country' => $this->string(10),
+            'created' => $this->dateTime()->notNull(),
+            'updated' => $this->dateTime()->notNull()
         ], $tableOptions);
 
     }
 
     public function down()
     {
-        $this->dropTable('{{%tbl_province}}');
+        $this->dropTable('{{%province}}');
     }
 
     /*
