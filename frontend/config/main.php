@@ -1,6 +1,6 @@
 <?php
-//use yii\web\Request;
-//$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
+use yii\web\Request;
+$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/../../common/config/params-local.php'),
@@ -16,10 +16,10 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            //'baseUrl' =>$baseUrl
+            'baseUrl' =>$baseUrl
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\model\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -41,11 +41,11 @@ return [
         ],
         
         'urlManager' => [
-        	//'baseUrl' => $baseUrl,
+        	'baseUrl' => $baseUrl,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+            ]
         ],
         
     ],

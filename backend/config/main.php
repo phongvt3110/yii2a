@@ -20,7 +20,7 @@ return [
             'baseUrl' =>$baseUrl
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\model\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
@@ -46,7 +46,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+            ]
         ],
         
     ],
